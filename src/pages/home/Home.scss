@@ -1,0 +1,145 @@
+.home-container {
+    padding: 0;
+
+    .main-title {
+        max-width: 260rem;
+        font-weight: 600;
+        font-size: 28rem;
+        line-height: 129%;
+        margin-top: 0;
+        margin-bottom: 28rem;
+} 
+
+    .drinks-list {
+        min-height: 34rem;
+        overflow: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 19rem;
+        margin-bottom: 22rem;
+        margin-left: 30rem;
+        
+        &__item {
+            display: inline-block;
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 8rem;
+                height: 8rem;
+                border-radius: 7rem;
+                position: absolute;
+                bottom: 3rem;
+                left: calc(50% - 4rem);
+                transition: .2s all ease-in-out;
+                background: var(--c-bg-btn);
+                transform: scale(0);
+            }
+
+            &.selected::before {
+                transform: scale(1);
+            }
+    
+            &.selected .drinks-list__item-name {
+                color: var(--c-bg-btn);
+            }
+        }
+
+        &__item-name {
+            font-weight: 600;
+            font-size: 14rem;
+            line-height: 143%;
+            color: var(--c-text-grey);
+            cursor: pointer;
+        }
+    }
+
+    .coffee-drinks {
+        overflow: auto;
+        white-space: nowrap;
+        margin-left: 30rem;
+        padding: 0 0 10rem 0;
+        
+        &__img { 
+            display: flex;
+            position: relative;
+            margin-bottom: 10rem;
+            img {
+                border-radius: 16rem;
+            }
+        }
+
+        &__raiting {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 5rem;
+            padding: 1rem 11rem 2rem;
+            border-radius: 0 16rem 0 26rem;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            right: 0;
+            .icon-star::before {
+                color: var(--c-bg-btn);
+                font-size: 10rem;
+                line-height: 200%;
+            }
+
+            .raiting_value {
+                font-weight: 600;
+                font-size: 10rem;
+                line-height: 200%;
+                color: var(--c-white);
+            }
+        }
+
+        &__desc {
+            font-weight: 400;
+            font-size: 9rem;
+            line-height: 222%;
+            color: var(--c-white);
+            margin-bottom: 3rem;
+        }
+
+        &__bye-info { 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .price-value {
+                font-weight: 600;
+                font-size: 15rem;
+                line-height: 133%;
+                color: var(--c-white);
+                span {
+                    color: var(--c-bg-btn);
+                }
+            }
+            .add-btn { 
+                border-radius: 7rem;
+                max-width: 28rem;
+                max-height: 28rem;
+                padding: 10rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .icon-plus {
+                font-size: 10rem;
+            }
+        }
+    }
+
+    .chapter-title {
+        font-weight: 500;
+        font-size: 16rem;
+        line-height: 125%;
+        color: var(--c-white);
+        margin-top: 23rem;
+        margin-bottom: 19rem; 
+    }
+
+}
+

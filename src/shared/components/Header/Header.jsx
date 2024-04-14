@@ -12,7 +12,7 @@ export const Header = () => {
         <span className="icon-menu"></span>
       </div>
       <div className="user">
-        <Link to="/" className="user-link">
+        <Link to="/auth" className="user-link">
           <span className="icon-coffee"></span>
         </Link>
       </div>
