@@ -12,7 +12,8 @@ import { Cart } from './pages/cart/Cart.jsx'
 import { Notification } from './pages/notification/Notification.jsx'
 import { ApiProvider } from './ApiProvider.jsx'
 import { NotFound } from './shared/components/NotFound/NotFound.jsx'
-import { Login } from './pages/auth/Login.jsx'
+import { Login } from './pages/auth/Login.jsx' 
+import { DrinkPage } from './pages/drinks/DrinkPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/drinks/:id",
+        element: <DrinkPage />,
       },
       {
         path: "/auth",
