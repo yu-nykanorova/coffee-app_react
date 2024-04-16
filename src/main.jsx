@@ -14,6 +14,9 @@ import { ApiProvider } from './ApiProvider.jsx'
 import { NotFound } from './shared/components/NotFound/NotFound.jsx'
 import { Login } from './pages/auth/Login.jsx' 
 import { DrinkPage } from './pages/drinks/DrinkPage.jsx'
+import { DrinksList } from './pages/home/components/DrinksList/DrinksList.jsx'
+import { BeansList } from './pages/home/components/BeansList/BeansList.jsx'
+import { BeanPage } from './pages/beans/BeanPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,8 +27,20 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/",
+        element: <DrinksList />,
+      },
+      {
         path: "/drinks/:id",
         element: <DrinkPage />,
+      },
+      {
+        path: "/",
+        element: <BeansList />,
+      },
+      {
+        path: "/beans/:id",
+        element: <BeanPage />,
       },
       {
         path: "/auth",

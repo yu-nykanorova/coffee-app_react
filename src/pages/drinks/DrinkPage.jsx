@@ -1,12 +1,18 @@
-import { useParams } from "react-router-dom"
+import { DrinksProvider } from "../../DrinksContext";
+import { Drink } from "./Drink";
 
 export const DrinkPage = () => {
-  const{id} = useParams();
-
+  
   return (
     <div>
-      <h1>Drink detail - {id}</h1>
-    </div>
-  );
+      Test
+      <DrinksProvider>
+        <Drink />
+      </DrinksProvider>
+      Test2
+    </div> 
+  )
 }
+
+
 

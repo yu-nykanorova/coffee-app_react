@@ -1,50 +1,23 @@
 import { Link } from "react-router-dom";
 import "./DrinksList.scss";
+import { useContext } from "react";
+import { DrinksContext } from "../../../../DrinksContext";
 
 export const DrinksList = () => {
-  const drinks = [
-    {
-        id: 1,
-        title: "Cappuccino",
-        desc: "With Steamed Milk",
-        price: 4.20,
-        raiting: 4.5,
-    },
-    {
-        id: 2,
-        title: "Cappuccino",
-        desc: "With Foam",
-        price: 4.20,
-        raiting: 4.2,
-    },
-    {
-        id: 3,
-        title: "Cappuccino",
-        desc: "With Steamed Milk",
-        price: 4.20,
-        raiting: 4.5,
-    },
-  ]
-  
-    return (
-    <div className="coffee-drinks">
+  const drinks = useContext(DrinksContext);
+
+  return (
+    <div>
       {drinks.map(drink => (
         <div key={drink.id}>
-            <Link to={`/drinks/${drink.id}`} className="item-container coffee-drinks__item">
-                <h3 className="item-title coffee-drinks__title">{drink.title}</h3>
-                <p className="coffee-drinks__desc">{drink.desc}</p>
-                <div className="coffee-drinks__bye-info">
-                    <p className="price-value"><span>$ </span>{drink.price}</p>
-                    <button className="btn add-btn"><span class="icon-plus"></span></button>
-                </div>
-            </Link>
+          <Link to={`/drinks/${drink.id}`}>{drink.title}</Link>
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-{/* <div class="coffee-drinks">
+/* <div class="coffee-drinks">
   <a [routerLink]="'/product/' + item.id" class="item-container coffee-drinks__item" *ngFor="let item of coffeeDrinksData">
     <div class="coffee-drinks__img">
       <img src="{{item.img}}" alt="coffee-drink">
@@ -60,4 +33,4 @@ export const DrinksList = () => {
       <button class="btn add-btn"><span class="icon-plus"></span></button>
     </div>
   </a>
-</div> */}
+</div> */

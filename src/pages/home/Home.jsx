@@ -1,4 +1,7 @@
+import { BeansProvider } from "../../BeansContext"
+import { DrinksProvider } from "../../DrinksContext"
 import "./Home.scss"
+import { BeansList } from "./components/BeansList/BeansList"
 import { DrinksList } from "./components/DrinksList/DrinksList"
 import { DrinksTitlesList } from "./components/DrinksTitlesList/DrinksTitlesList"
 import { Search } from "./components/Search/Search"
@@ -10,7 +13,14 @@ export const Home = () => {
 
       <Search />
       <DrinksTitlesList />
-      <DrinksList />
+      <DrinksProvider>
+        <DrinksList />
+      </DrinksProvider>
+      <BeansProvider>
+        <BeansList />
+      </BeansProvider>
+      
+      
         {/* <app-search></app-search> */}
 
       {/* <div class="drinks-list">
