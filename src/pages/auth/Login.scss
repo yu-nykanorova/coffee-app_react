@@ -7,5 +7,12 @@
     display: grid;
     overflow-y: auto;
     place-items: center;
-    background: linear-gradient(0deg, rgb(82, 85, 90) 0%, rgb(12,8,20) 40%);
+    background: linear-gradient(158.84deg, #262B33 4%, rgba(38, 43, 51, 0) 91.93%);
+
+    .back-arrow {
+        position: fixed;
+        left: 30rem;
+        top: 30rem;
+    }
 }
+

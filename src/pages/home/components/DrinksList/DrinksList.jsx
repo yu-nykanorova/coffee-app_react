@@ -2,35 +2,34 @@ import { Link } from "react-router-dom";
 import "./DrinksList.scss";
 import { useContext } from "react";
 import { DrinksContext } from "../../../../DrinksContext";
+import { ButtonAdd } from "../../../../shared/UI/ButtonAdd/ButtonAdd";
 
 export const DrinksList = () => {
   const drinks = useContext(DrinksContext);
 
   return (
-    <div>
+    <div className="coffee-drinks">
       {drinks.map(drink => (
         <div key={drink.id}>
-          <Link to={`/drinks/${drink.id}`}>{drink.title}</Link>
+          <Link to={`/drinks/${drink.id}`} className="item-container coffee-drinks__item">
+            <div className="coffee-drinks__img">
+              <img src={drink.imgUrl} alt={drink.title} />
+              <div className="coffee-drinks__raiting">
+                <span className="icon-star"></span>
+                <p className="raiting_value">{ drink.raiting }</p>
+              </div>
+            </div>
+            <h3 className="item-title coffee-drinks__title">{drink.title}</h3>
+            <p className="coffee-drinks__desc">{drink.comment}</p>
+            <div className="coffee-drinks__bye-info">
+              <p className="price-value"><span>$ </span>{drink.price}</p>
+              <ButtonAdd />
+            </div>
+            </Link>
         </div>
       ))}
     </div>
   )
 }
 
-/* <div class="coffee-drinks">
-  <a [routerLink]="'/product/' + item.id" class="item-container coffee-drinks__item" *ngFor="let item of coffeeDrinksData">
-    <div class="coffee-drinks__img">
-      <img src="{{item.img}}" alt="coffee-drink">
-      <div class="coffee-drinks__raiting">
-        <span class="icon-star"></span>
-        <p class="raiting_value">{{ item.raiting }}</p>
-      </div>
-    </div>
-    <h3 class="item-title coffee-drinks__title">{{item.title}}</h3>
-    <p class="coffee-drinks__desc">{{item.desc}}</p>
-    <div class="coffee-drinks__bye-info">
-      <p class="price-value"><span>$ </span>{{item.price}}</p>
-      <button class="btn add-btn"><span class="icon-plus"></span></button>
-    </div>
-  </a>
-</div> */
+

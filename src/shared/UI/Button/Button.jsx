@@ -1,14 +1,14 @@
-import { Value } from "sass";
+import "./Button.scss";
 
 export const Button = ({className, variant, label, children, ...props}) => {
 
     const renderClass = () => {
         switch (variant) {
             case "primary":
-                return `btn btn--primary ${className} `
+                return `btn btn-main btn--primary ${className} `
                 break;
             case "secondary":
-                return `btn btn--secondary ${className} `
+                return `btn btn-main btn--secondary ${className} `
                 break;
             default:
                 break;

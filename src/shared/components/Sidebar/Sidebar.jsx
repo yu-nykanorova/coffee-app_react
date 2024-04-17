@@ -1,7 +1,13 @@
 import "./Sidebar.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export const Sidebar = () => {
+  const location = useLocation();
+
+  if (location.pathname.includes("/drink") || location.pathname.includes("/bean") || location.pathname.includes("/auth")) {
+    return null;
+  }
+
   return (
     <div className="sidebar">
       <NavLink to="/" className={({ isActive }) => isActive ? "sidebar-link is-active" : "sidebar-link"}>

@@ -1,21 +1,22 @@
-.back-and-like {
-    align-items: center; 
-    padding: 60rem 21rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
+.icon-container {
     display: flex;
-    justify-content: space-between;
-    .icon-chevron-left, .icon-heart {
-        background: linear-gradient(137deg, #21262e 0%, #0c0f14 100%);
-        border: 1px solid #21262e;
-        border-radius: 10rem;
-        width: 33rem;
-        height: 33rem;
-        font-size: 14rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 12rem;
+    background: linear-gradient(136.61deg, #21262E 4.28%, #0C0F14 93.52%);
+    border: 1px solid #21262E;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 33rem;
+    height: 33rem;
+
+    .icon-chevron-left::before, .icon-heart::before {
+        color: var(--c-text-grey);
+        font-size: 15rem;
+    }
+
+    &.liked .icon-heart::before {
+        color: #DC3535;
     }
 }
 
@@ -36,15 +37,6 @@
     font-size: 12rem;
     line-height: 167%;
     color: var(--c-white);
-}
-
-.add-to-cart-btn {
-    font-weight: 600;
-    font-size: 16rem;
-    line-height: 125%;
-    padding: 20rem 73rem;
-    color: var(--c-white);
-    border-radius: 20rem;
 }
 
 .size-container {
