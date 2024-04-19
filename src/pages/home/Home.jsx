@@ -33,9 +33,9 @@ export const Home = () => {
         <a [routerLink]="'/product/' + item.id" class="item-container coffee-drinks__item" *ngFor="let item of coffeeDrinksData">
           <div class="coffee-drinks__img">
             <img src="{{item.img}}" alt="coffee-drink">
-            <div class="coffee-drinks__raiting">
+            <div class="coffee-drinks__rating">
               <span class="icon-star"></span>
-              <p class="raiting_value">{{ item.raiting }}</p>
+              <p class="rating_value">{{ item.rating }}</p>
             </div>
           </div>
           <h3 class="item-title coffee-drinks__title">{{item.title}}</h3>

@@ -19,7 +19,7 @@ export const Search = ({ onSubmit }) => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Find Your Coffee"
+          placeholder="Find Your Coffee..."
         />
       </form>
     </div>

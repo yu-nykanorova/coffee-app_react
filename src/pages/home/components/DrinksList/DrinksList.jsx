@@ -14,9 +14,9 @@ export const DrinksList = () => {
           <Link to={`/drinks/${drink.id}`} className="item-container coffee-drinks__item">
             <div className="coffee-drinks__img">
               <img src={drink.imgUrl} alt={drink.title} />
-              <div className="coffee-drinks__raiting">
+              <div className="coffee-drinks__rating">
                 <span className="icon-star"></span>
-                <p className="raiting_value">{ drink.raiting }</p>
+                <p className="rating_value">{ drink.rating }</p>
               </div>
             </div>
             <h3 className="item-title coffee-drinks__title">{drink.title}</h3>

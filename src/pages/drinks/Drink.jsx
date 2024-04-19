@@ -12,11 +12,25 @@ export const Drink = () => {
     const drinks = useContext(DrinksContext);
     const drink = drinks.find(item => item.id === parseInt(id));
     const [isVoted, setIsVoted] = useState(false);
-
-    const toggleVote = () => {
-        setIsVoted(!isVoted); 
-    };
+    const [votes, setVotes] = useState(drink.votes);
+    
+    // const toggleVote = () => {
+    //     setIsVoted(!isVoted); 
+    // };
   
+    const handleClick = () => {
+      if (isVoted) {
+        setIsVoted(false);
+        setVotes(votes - 1);
+      } else {
+        setIsVoted(true);
+        setVotes(votes + 1);
+      }
+    }
+
+    const starClass = isVoted ? "icon-star voted" : "icon-star";
+    const ratingClass = isVoted ? "rating voted" : "rating";
+
     if (!drinks) return <h1>Drink not found!</h1>;
      
     return (
@@ -31,10 +45,10 @@ export const Drink = () => {
             <div className="item-title__info">
               <h3 className="item-title__name">{ drink.title }</h3>
               <p className="item-title__region">{ drink.comment }</p>
-              <div className="item-title__raiting">
-                <span className={`icon-star ${isVoted ? "voted" : ''}`} onClick={toggleVote}></span>
-                <p className="raiting">{ drink.raiting }</p>
-                <p className="votes">({ drink.votes })</p>
+              <div className="item-title__rating">
+                <span className={starClass} onClick={handleClick}></span>
+                <p className={ratingClass}>{ drink.rating }</p>
+                <p className="votes">({ votes })</p>
               </div>
             </div>
             <div className="item-title__markers">
@@ -43,10 +57,16 @@ export const Drink = () => {
                   <span className="icon-coffee_2"></span>
                   <p>Coffee</p>
                 </div>
+                {drink.milk ? 
                 <div className="marker-water">
                   <span className="icon-water"></span>
                   <p>Milk</p>
                 </div>
+                : 
+                <div className="marker-water">
+                  <span className="icon-water"></span>
+                  <p>No Milk</p>
+                </div>}
               </div>
               <div className="roast">{ drink.roast }</div>
             </div>

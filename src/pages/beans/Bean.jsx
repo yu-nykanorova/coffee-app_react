@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BeansContext } from "../../BeansContext";
 import "./BeanPage.scss";
 import { BackArrow } from "../../shared/UI/BackArrow/BackArrow";
@@ -10,6 +10,11 @@ export const Bean = () => {
     const { id } = useParams();
     const beans = useContext(BeansContext);
     const bean = beans.find(item => item.id === parseInt(id));
+    const [isVoted, setIsVoted] = useState(false);
+
+    const toggleVote = () => {
+      setIsVoted(!isVoted); 
+    };
 
     if (!beans) return <h1>Bean not found!</h1>;
     
@@ -25,9 +30,9 @@ export const Bean = () => {
             <div className="item-title__info">
               <h3 className="item-title__name">{ bean.title }</h3>
               <p className="item-title__region">From { bean.region }</p>
-              <div className="item-title__raiting">
-                <span className="icon-star"></span>
-                <p className="raiting">{ bean.raiting }</p>
+              <div className="item-title__rating">
+                <span className={`icon-star ${isVoted ? "voted" : ''}`} onClick={toggleVote}></span>
+                <p className="rating">{ bean.rating }</p>
                 <p className="votes">({ bean.votes })</p>
               </div>
             </div>

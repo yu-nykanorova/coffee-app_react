@@ -37,7 +37,7 @@
         color: var(--c-text-grey-light);
         margin-bottom: 25rem;
      }
-	&__raiting {
+	&__rating {
         display: flex;
         align-items: baseline;
         gap: 5rem;
@@ -51,7 +51,7 @@
      }
 }
 
-.raiting { 
+.rating { 
     font-weight: 600;
     font-size: 16rem;
     line-height: 125%;

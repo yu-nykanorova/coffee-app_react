@@ -4,7 +4,7 @@ export const LikeHeart = () => {
     const [isLiked, setIsLiked] = useState(false);
 
     const toggleLike = () => {
-        setIsLiked(!isLiked);
+        setIsLiked(!isLiked); 
     };
 
     return (

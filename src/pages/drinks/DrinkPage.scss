@@ -47,10 +47,32 @@
         color: var(--c-text-grey-light);
         margin-bottom: 25rem;
      }
-	&__raiting {
+	&__rating {
         display: flex;
         align-items: baseline;
         gap: 5rem;
+
+        .rating { 
+            font-weight: 600;
+            font-size: 16rem;
+            line-height: 125%;
+            color: var(--c-white);
+            &.voted {
+                color: var(--c-bg-btn);
+            }
+        }
+        .votes {
+            font-weight: 400;
+            font-size: 10rem;
+            line-height: 200%;
+            color: var(--c-text-grey-light);
+            align-self: center;
+        }
+
+        .icon-star.voted::before {
+            color: var(--c-bg-btn);
+        }
+
      }
 
 	&__markers {
@@ -61,20 +83,7 @@
      }
 }
 
-.raiting { 
-    font-weight: 600;
-    font-size: 16rem;
-    line-height: 125%;
-    color: var(--c-white);
-}
 
-.votes {
-    font-weight: 400;
-    font-size: 10rem;
-    line-height: 200%;
-    color: var(--c-text-grey-light);
-    align-self: center;
- }
 
 .markers {
     display: flex;
@@ -191,7 +200,5 @@
     color: #DC3535;
 }
 
-.voted::before {
-    color: var(--c-bg-btn);
-}
+
 
