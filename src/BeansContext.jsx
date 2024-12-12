@@ -14,7 +14,7 @@ export const BeansProvider = ({children}) => {
             region: "Africa",
             rating: 4.5,
             votes: 6.879,
-            imgUrl: "/src/assets/img/robusta_beans_1.png",
+            imgUrl: "/src/assets/img/robusta_beans_1.jpg",
         },
         {
             id: 2,
@@ -25,7 +25,7 @@ export const BeansProvider = ({children}) => {
             region: "Africa",
             rating: 4.5,
             votes: 6.879,
-            imgUrl: "/src/assets/img/arabica_beans_1.png",
+            imgUrl: "/src/assets/img/arabica_beans_1.jpg",
         },
         {
             id: 3,
@@ -36,7 +36,7 @@ export const BeansProvider = ({children}) => {
             region: "Africa",
             rating: 4.5,
             votes: 6.879,
-            imgUrl: "/src/assets/img/robusta_beans_2.png",
+            imgUrl: "/src/assets/img/robusta_beans_2.jpg",
         },
         {
             id: 4,
@@ -47,7 +47,7 @@ export const BeansProvider = ({children}) => {
             region: "Africa",
             rating: 4.5,
             votes: 6.879,
-            imgUrl: "/src/assets/img/arabica_beans_2.png",
+            imgUrl: "/src/assets/img/arabica_beans_2.jpg",
         },
     ]);
 
