@@ -6,10 +6,6 @@ import { Sidebar } from './shared/components/Sidebar/Sidebar';
 export const ApiContext = createContext({});
 
 export const ApiProvider = () => {
-    // const [token, setToken] = eseState("");
-    // if (!token) {
-        //return <Navigate to="/403" replace />;
-    // }
 
     const value = useMemo(() => ({}), []);
 
